@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+    font-family: 'FuturaPT-Heavy', 'Futura-Normal', Arial, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body-background-color);
+    height: 100vh;
+    justify-content: center;
+}
+
+.cell-center {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.cell-center-column {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "hea hea hea hea hea hea hea hea hea hea hea hea" "nav nav nav nav nav nav nav nav nav nav nav nav" "das das das das das das das das das das das das" "foo foo foo foo foo foo foo foo foo foo foo foo";
+}
+
+.header {
+    grid-area: hea;
+    padding: 10px 0px;
+}
+
+.navbar {
+    grid-area: nav;
+    background-color: #333;
+}
+
+.dashboard {
+    margin-left: 2.35vh;
+    margin-right: 2.35vh;
+    grid-area: das;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "per per per per per per per per per per per ..." "hob hob hob hob hob hob hob hob hob hob hob hob" "pro pro pro pro pro pro pro pro pro pro pro pro";
+}
+
+.personal {
+    grid-area: per;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: "pti pti pti pti pti pti pti pti pti pti pti pti" "psi psi psi psi psi psc psc psc psc psc psc psc";
+}
+
+.personal-title {
+    grid-area: pti;
+}
+
+.personal-image {
+    grid-area: psi;
+}
+
+.personal-content {
+    grid-area: psc;
+}
+
+.hobbie {
+    grid-area: hob;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: "hti hti hti hti hti hti hti hti hti hti hti hti" "ho1 ho1 ho1 ho2 ho2 ho2 ho3 ho3 ho3 ho4 ho4 ho4"
+}
+
+.hobbie-title {
+    grid-area: hti;
+}
+
+.hobbie-1 {
+    grid-area: ho1;
+}
+
+.hobbie-2 {
+    grid-area: ho2;
+}
+
+.hobbie-3 {
+    grid-area: ho3;
+}
+
+.hobbie-4 {
+    grid-area: ho4;
+}
+
+.proyecto {
+    grid-area: pro;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "prt prt prt prt prt prt prt prt prt prt prt prt" "pin pin pin pin pin pin pin pin pin pin pin pin" "pr1 pr1 pr1 pr1 pr2 pr2 pr2 pr2 pr3 pr3 pr3 pr3";
+}
+
+.project-title {
+    grid-area: prt;
+}
+
+.project-info {
+    grid-area: pin;
+}
+
+.project-1 {
+    grid-area: pr1;
+}
+
+.project-2 {
+    grid-area: pr2;
+}
+
+.project-3 {
+    grid-area: pr3;
+}
+
+.footer {
+    grid-area: foo;
+    background-color: #111;
+}
+
+@media screen and (max-width: 992px) {
+    .dashboard {
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "per per per per per per per per per per per per" "hob hob hob hob hob hob hob hob hob hob hob hob" "pro pro pro pro pro pro pro pro pro pro pro pro";
+    }
+    .personal {
+        grid-template-rows: 70px auto auto;
+        grid-template-areas: "pti pti pti pti pti pti pti pti pti pti pti pti" "psi psi psi psi psi psi psi psi psi psi psi psi" "psc psc psc psc psc psc psc psc psc psc psc psc";
+    }
+    .personal-image {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hobbie {
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "hti hti hti hti hti hti hti hti hti hti hti hti" "ho1 ho1 ho1 ho1 ho1 ho1 ho2 ho2 ho2 ho2 ho2 ho2" "ho3 ho3 ho3 ho3 ho3 ho3 ho4 ho4 ho4 ho4 ho4 ho4";
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .proyecto {
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: "prt prt prt prt prt prt prt prt prt prt prt prt" "pin pin pin pin pin pin pin pin pin pin pin pin" "pr1 pr1 pr1 pr1 pr1 pr1 pr1 pr1 pr1 pr1 pr1 pr1" "pr2 pr2 pr2 pr2 pr2 pr2 pr2 pr2 pr2 pr2 pr2 pr2" "pr3 pr3 pr3 pr3 pr3 pr3 pr3 pr3 pr3 pr3 pr3 pr3";
+    }
+}
+
+.navbar-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: middle;
+}
+
+.navbar-li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 16px;
+    opacity: 0.85;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-transition: background-color 0.5s;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.navbar-li a:hover, .active {
+    background-color: #111;
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s ease-in-out;
+}
+
+.title::after {
+    background-color: rgb(236, 140, 61);
+    content: "";
+    width: 5%;
+    height: 1px;
+    display: block;
+    margin-top: 10px;
+}
+
+.img-logo {
+    height: auto;
+    width: 20%;
+}
+
+.img {
+    height: auto;
+    width: 60%;
+}
+
+.img-project {
+    height: 200px;
+    width: 200px;
+    -webkit-transition: width 1s, height 1s;
+    /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s, height 0.5s;
+}
+
+.img-project:hover {
+    height: 300px;
+    width: 300px;
+    -webkit-transition: width 1s, height 1s;
+    /* For Safari 3.1 to 6.0 */
+    transition: width 1s, height 1s;
+}
+
+.social-media-icon {
+    color: white;
+    padding: 1em 0.5em;
+    font-size: 1.4em;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s ease-in-out;
+}
+
+#facebook:hover, #twitter:hover {
+    color: rgb(49, 47, 197);
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s ease-in-out;
+}
+
+#instagram:hover {
+    color: rgb(190, 175, 175);
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s ease-in-out;
+}
+
+#linkedin:hover {
+    color: lightblue;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s ease-in-out;
+}
+
+#soundcloud:hover {
+    color: orangered;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s ease-in-out;
+}
+
+.line-height {
+    line-height: 1.5em;
+}
+
+p {
+    font-size: 2.5vh;
+}
